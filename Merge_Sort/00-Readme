@@ -1,0 +1,106 @@
+This program generates a set of random integers, sorts them using the Merge Sort algorithm, and displays the generated and sorted arrays. It also measures the time taken for the sorting operation in microseconds.
+Prerequisites
+
+To compile and run this code, you need a C++ compiler that supports the C++11 standard or later (due to the use of the chrono library for measuring time).
+
+    Compiler: g++ (GNU Compiler Collection)
+
+    OS: The code can be compiled on any operating system that supports a C++ compiler (Windows, macOS, Linux).
+
+Instructions for Compiling and Running
+
+    1.) Save the Code:
+
+        Copy the code and save it to a file with a .cpp extension, for example, mergesort.cpp.
+
+    2.) Open Terminal (or Command Prompt):
+
+        On Linux/macOS, open the terminal.
+
+        On Windows, open Command Prompt or PowerShell.
+
+    3.) Navigate to the Directory:
+
+        Use the cd command to navigate to the directory where you saved the .cpp file. For example:
+
+            cd path/to/directory
+
+    4.) Compile the Code:
+
+        If you're using g++ (part of the GNU Compiler Collection), run the following command to compile the code:
+
+        g++ -o mergesort mergesort.cpp
+
+        This will generate an executable file named mergesort.
+
+    5.) Run the Program:
+
+        After compiling, run the program using the following command:
+
+        ./mergesort
+
+        On Windows, the command would be:
+
+        mergesort.exe
+
+    6.) Input and Output:
+
+        The program will ask you to enter the number of random integers to generate. For example:
+
+            Enter the number of random integers to generate: 10
+
+            It will then display the randomly generated numbers, the sorted array, and the time taken to perform the sorting operation in microseconds.
+
+Code Explanation
+
+    generateRandomNumbers(int arr[], int n):
+
+        Generates n random integers between 0 and 999 and stores them in the array arr.
+
+    displayArray(int arr[], int n):
+
+        Prints the elements of the array to the console.
+
+    merge(int arr[], int left, int mid, int right):
+
+        Merges two sorted subarrays (arr[left...mid] and arr[mid+1...right]) into a single sorted array.
+
+    mergeSort(int arr[], int left, int right):
+
+        The recursive function that implements the Merge Sort algorithm. It divides the array into two halves and recursively sorts them, then merges the results.
+
+    main():
+
+        The main entry point of the program where user input is taken, the array is generated and sorted, and the time taken for sorting is measured and displayed.
+
+Example Output
+
+Enter the number of random integers to generate: 10
+Generated numbers: 34 567 890 123 456 789 234 555 999 10 
+Sorted array: 10 34 123 234 456 555 567 789 890 999 
+Time taken by merge sort: 125 microseconds
+
+Notes
+
+    Edge Cases:
+
+        If you enter n <= 0, the program will prompt you to enter a positive number.
+
+    Time Measurement:
+
+        The program uses chrono::high_resolution_clock to measure the time taken by the mergeSort function in microseconds.
+
+    Limitations:
+
+        The array size (n) should not be too large, as it is dynamically allocated on the stack (using variable-length arrays). For very large arrays, it may be better to use std::vector to avoid stack overflow issues.
+
+Troubleshooting
+
+    Error with Compilation:
+
+        If you encounter an error saying std::chrono or rand is not recognized, make sure you are using a compiler that supports C++11 or later.
+
+    Time Measurement Not Accurate:
+
+        On systems with low resolution timers or heavy background processes, the time measured by the program might not be accurate for small array sizes.
+
