@@ -1,0 +1,28 @@
+Algorithm Analysis – Quick Sort
+-------------------------------
+
+Language Used: C++
+Input Type: N random integers
+Environment: Windows 11, Intel i5, 8GB RAM
+
+Time Complexity:
+- Best Case: O(N log N)
+- Average Case: O(N log N)
+- Worst Case: O(N^2) – occurs when the pivot divides array very unevenly (e.g., already sorted data with bad pivot selection)
+
+Runtime Test Results:
+- Input Size: 10000  → Time: 4 ms
+- Input Size: 50000  → Time: 22 ms
+- Input Size: 100000 → Time: 48 ms
+- Input Size: 200000 → Time: 7 ms
+- Input Size: 600000 → Time: 23 ms
+
+
+
+Case Analysis:
+- Best Case: When a pivot divides array into equal halves.
+- Average Case: Random pivot selection on average.
+- Worst Case: When array is already sorted(Ascending and descending)
+
+Conclusion:
+Quick Sort is generally fast but highly sensitive to pivot choice. Recommended to use randomized or median pivot for best performance in real-world cases. On average, its performance grows logarithmically as the data size increases. 

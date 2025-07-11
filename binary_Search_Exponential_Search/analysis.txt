@@ -1,0 +1,41 @@
+Algorithm Analysis – Binary Search & Exponential Search
+--------------------------------------------------------
+
+Language Used: C++
+Input Type: N random integers (user-defined)
+Environment: Linux(Arch), Intel i3, 12GB RAM
+
+1. Binary Search
+-----------------
+Time Complexity:
+- Best Case: 0.213125 ms(1)
+- Average Case: 0.408502 ms(log N)
+- Worst Case: 0.478258 ms(log N)
+
+Runtime Test Results:
+- Input Size: 1000 --> Time: 0.315615 ms.
+- Input Size: 10000 --> Time: 0.425551 ms.
+
+Case Analysis:
+- Best Case: Found at middle index (Time ~ 0.0009 ms)
+- Average Case: Found in 2nd or 3rd division
+- Worst Case: Element not present or at last position searched
+
+2. Exponential Search
+-----------------------
+Time Complexity:
+- Best Case: O(1)
+- Average Case: O(log i), where i is the range where the element is found
+- Worst Case: O(log N)
+
+Runtime Test Results:
+- Input Size: 1000 --> Time: 0.0017 ms
+- Input Size: 10000 --> Time: 0.0032 ms
+
+Advantages:
+- Works better for large sorted arrays
+- Locates range quickly before applying binary search
+
+Conclusion:
+- Binary Search is simpler and efficient for small arrays
+- Exponential Search is more suitable when search space is huge and sorted

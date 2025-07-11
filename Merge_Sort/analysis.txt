@@ -1,0 +1,23 @@
+Algorithm Analysis – Merge Sort
+-------------------------------
+
+Language Used: C++
+Input Type: N random integers
+Environment: Windows 10, Intel i7, 16GB RAM
+
+Time Complexity:
+- Best Case: O(N log N)
+- Average Case: O(N log N)
+- Worst Case: O(N log N) – stable across all input types
+
+Runtime Test Results:
+- Input Size: 1000  → Time: 0.0048 ms
+- Input Size: 5000  → Time: 0.0271 ms
+- Input Size: 10000 → Time: 0.0549 ms
+
+Case Analysis:
+- Merge Sort performs consistently regardless of input order.
+- Uses additional space for merging (O(N) space complexity)
+
+Conclusion:
+Merge Sort is stable and predictable, making it ideal when space is not a constraint. Performs slightly slower than Quick Sort for small datasets but better for very large arrays with poor pivoting scenarios.
