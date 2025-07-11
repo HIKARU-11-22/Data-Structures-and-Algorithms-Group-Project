@@ -1,0 +1,127 @@
+This program allows you to test the Exponential Search algorithm on an array of integers. It offers two ways to input data: either randomly generated or manually input by the user. The program measures the average runtime for different search cases: best, average, worst, and not found, and displays them in nanoseconds.
+Prerequisites
+
+    Compiler: A C++11 or later compatible compiler (supports chrono, random, and modern C++ features).
+
+    OS: The code is compatible with any operating system that has a C++ compiler (Linux, macOS, Windows).
+
+Instructions for Compiling and Running
+
+    Save the Code:
+
+        Copy the code and save it to a file with a .cpp extension, for example, exponential_search.cpp.
+
+    Open Terminal (or Command Prompt):
+
+        On Linux/macOS, open the terminal.
+
+        On Windows, open Command Prompt or PowerShell.
+
+    Navigate to the Directory:
+
+        Use the cd command to navigate to the directory where the .cpp file is saved. For example:
+
+    cd path/to/directory
+
+Compile the Code:
+
+    Using g++ (part of the GNU Compiler Collection), compile the code with the following command:
+
+    g++ -o exponential_search exponential_search.cpp
+
+    This will generate an executable file named exponential_search.
+
+Run the Program:
+
+    After compiling, run the program using:
+
+./exponential_search
+
+On Windows, you can use:
+
+        exponential_search.exe
+
+    Input and Output:
+
+        The program will prompt you to enter the number of elements (N).
+
+        Then, you will be asked to choose between generating random input or manually entering the values.
+
+        Afterward, the program will display the runtime for best, average, worst, and not found search cases in nanoseconds.
+
+Code Explanation
+
+    binarySearch(const vector<int>& arr, int left, int right, int target):
+
+        Performs the binary search on a sorted array, searching for the target value between the indices left and right.
+
+    exponentialSearch(const vector<int>& arr, int target):
+
+        Implements Exponential Search, which works by first checking the element at index 0, then doubling the index to find a range where the target might exist. It then performs a binary search on that range.
+
+    measure Lambda Function:
+
+        This function is used to measure the average time taken for a given search case (Best, Average, Worst, or Not Found). It runs the search batch_size times in multiple batches, and the result is averaged to minimize noise and fluctuations from small execution times.
+
+    main():
+
+        The main function:
+
+            Prompts the user for the number of elements (N).
+
+            Offers an option to either generate random data or manually input the data.
+
+            Sorts the array for Exponential Search to work correctly.
+
+            Measures the search time for different scenarios: Best case (target at the start), Average case (target in the middle), Worst case (target at the end), and Not Found case (a number that doesn’t exist in the array).
+
+            Displays the results of each case in a table format with the time taken in nanoseconds.
+
+Example Output
+
+Enter number of elements (recommend >= 10000): 10000
+Choose input type:
+1. Random Input
+2. Manual Input
+Choice (1/2): 1
+
+=== Exponential Search Performance (N=10000) ===
++--------------+------------+
+| Case         | Time       |
++--------------+------------+
+| Best         | 8.34 ns    |
+| Average      | 10.12 ns   |
+| Worst        | 12.56 ns   |
+| Not Found    | 13.48 ns   |
++--------------+------------+
+
+Key Points
+
+    Exponential Search:
+
+        This search is efficient for searching in large sorted arrays, especially when the size is unknown beforehand. It quickly finds the appropriate range to apply binary search, making it more efficient than linear search for large datasets.
+
+    Time Measurement:
+
+        The program measures the average runtime over 10,000 iterations and calculates the time for each search case using nanoseconds. The time measurement approach ensures more accurate results by running multiple batches and averaging the results.
+
+    Custom Input:
+
+        You can either generate random data or manually enter the data for the array. The random numbers are uniformly distributed within the range 1 to N*10.
+
+Troubleshooting
+
+    Compilation Errors:
+
+        Make sure your compiler supports C++11 or later (for features like random, chrono, and lambda functions).
+
+        If the g++ command isn’t found, install GCC (GNU Compiler Collection).
+
+    Optimization Issues:
+
+        If you see that times seem unusually low, ensure that the compiler isn’t optimizing away parts of the program. The volatile keyword prevents the compiler from optimizing the search calls during the warm-up phase.
+
+    Invalid Choice:
+
+        If you enter an invalid choice (other than 1 or 2 for input type), the program will print an error message and exit.
+
