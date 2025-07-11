@@ -1,0 +1,104 @@
+This program demonstrates the performance of the Quick Sort algorithm on arrays of different sizes. The program generates random numbers, sorts them using Quick Sort, and measures the time taken for each sorting operation in milliseconds. The input sizes tested are predefined for benchmarking.
+Prerequisites
+
+    Compiler: A C++ compiler that supports C++11 or later (for chrono and modern C++ features).
+
+    OS: The code is compatible with any operating system that has a C++ compiler (Linux, macOS, Windows).
+
+Instructions for Compiling and Running
+
+    Save the Code:
+
+        Copy the code and save it to a file with a .cpp extension, for example, quick_sort.cpp.
+
+    Open Terminal (or Command Prompt):
+
+        On Linux/macOS, open the terminal.
+
+        On Windows, open Command Prompt or PowerShell.
+
+    Navigate to the Directory:
+
+        Use the cd command to navigate to the directory where the .cpp file is saved. For example:
+
+    cd path/to/directory
+
+    Compile the Code:
+
+        Using g++ (part of the GNU Compiler Collection), compile the code with the following command:
+
+        g++ -o quick_sort quick_sort.cpp
+
+        This will generate an executable file named quick_sort.
+
+    Run the Program:
+
+        After compiling, run the program using:
+
+    ./quick_sort
+
+    On Windows, you can use:
+
+        quick_sort.exe
+
+    Output:
+
+        The program will run Quick Sort on arrays of sizes 10,000, 50,000, 100,000, 20,000, and 60,000 (predefined sizes) and output the time taken for each sorting operation in milliseconds.
+
+Code Explanation
+
+    partition(vector<int>& arr, int low, int high):
+
+        This function partitions the array around a pivot element. The pivot element is chosen as the last element of the array, and all elements smaller than the pivot are moved to the left of the pivot, while all elements greater than the pivot are moved to the right. This function returns the index of the pivot element after partitioning.
+
+    quickSort(vector<int>& arr, int low, int high):
+
+        The quickSort function is the main function that implements the recursive quicksort algorithm. It partitions the array using partition() and recursively sorts the subarrays on either side of the pivot element.
+
+    main():
+
+        The main() function defines an array of sizes for testing. It generates random integers for each size, sorts the array using Quick Sort, and measures the time taken using the chrono library. The times are printed in milliseconds for each input size.
+
+Example Output
+
+Input Size: 10000 --> Time Taken: 17 ms
+Input Size: 50000 --> Time Taken: 152 ms
+Input Size: 100000 --> Time Taken: 345 ms
+Input Size: 20000 --> Time Taken: 67 ms
+Input Size: 60000 --> Time Taken: 223 ms
+
+Key Points
+
+    Random Data Generation:
+
+        For each input size, the program generates random integers between 0 and 99,999 using rand() % 100000.
+
+    Quick Sort:
+
+        Quick Sort is an efficient, comparison-based, divide-and-conquer algorithm with an average time complexity of O(n log n). The program tests Quick Sort with different input sizes to show how its runtime scales with increasing data.
+
+    Time Measurement:
+
+        The program uses chrono::high_resolution_clock to measure the time taken by the sorting operation, which is then converted to milliseconds.
+
+    Input Sizes:
+
+        The program is set to test five predefined input sizes (10,000, 50,000, 100,000, 20,000, and 60,000), giving you a good sense of how Quick Sort performs with different data sizes.
+
+Troubleshooting
+
+    Compilation Errors:
+
+        Make sure your compiler supports C++11 or later, especially for features like chrono, vector, and lambda functions.
+
+    High Runtime for Large Sizes:
+
+        For very large arrays (e.g., 100,000 elements or more), Quick Sort can take a significant amount of time. If you observe long runtimes, it may be because of the recursive nature of the algorithm. You could experiment with other sorting algorithms, such as Merge Sort, to compare performance.
+
+    Optimization Issues:
+
+        If you see the program running faster than expected, make sure the compiler isn't optimizing away parts of the code. This can be prevented by ensuring that unused variables (like the random array generation) are properly handled.
+
+Conclusion
+
+This program provides a clear demonstration of how the Quick Sort algorithm performs with varying input sizes. The runtime is measured in milliseconds to help gauge how well Quick Sort scales as the number of elements increases. Feel free to modify the input sizes or even try different sorting algorithms for comparison!
